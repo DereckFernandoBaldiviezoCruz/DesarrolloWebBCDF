@@ -1,0 +1,20 @@
+p{
+    background-color: aqua;
+    color: rgb(0, 4, 255);
+    border:  dotted black; /*Borde de los parrafos */
+    margin: 40px 10px 50px 10px; /*Espacio entre el borde y afuera de la ventana */
+    padding: 10px; /*Espacioy las letras entre borde  */
+    text-align: justify; 
+} 
+
+.resaltado{
+    font-weight: bolder;
+    color: red;
+    visibility: hidden;
+}
+
+#diferent {
+    background-color: yellow;
+    color: black;
+    width: 300px;
+}
