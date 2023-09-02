@@ -1,0 +1,122 @@
+.rojo{
+    color: #FF0000;
+} 
+.amarillo{
+    color: #FFFF00;
+}
+.verde{
+    color: #00B050;
+}
+.celeste{
+    color: #4C9BD3;
+}
+.azul{
+    color: #366F91;
+}
+
+.bgrojo{
+    background-color: #FF0000;
+} 
+.bgamarillo{
+    background-color: #FFFF00;
+}
+.bgverde{
+    background-color: #00B050;
+}
+.bgceleste{
+    background-color: #4C9BD3;
+}
+.bgazul{
+    background-color: #366F91;
+}
+.bgblanco{
+    background-color: white;
+}
+
+.contenedor{
+    width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.encabezado{
+    width: 900px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border: 1px solid red;
+}
+
+#logo{
+    width: 100px;
+    padding: 10px;
+}
+
+#titulo{
+    width: 700px;
+    padding-top: 20px;
+}
+
+#logo2{
+    width: 100px;
+    padding: 10px;
+}
+
+.centrado{
+    text-align: center;
+}
+
+.contenido{
+    display: flex;
+    width: 900px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    border: 1px solid red;  
+}
+#texto{
+    display: flex;
+    width: 770px;
+    text-align: left;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+.menu{
+    display: flex;
+    width: 130px;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.pregunta{
+    width: 90px;
+    padding: 10px;
+    border:1px solid black;
+}
+
+.pregunta a:link{
+    color: black;
+}
+.pregunta a:hover{
+background-color: #55555565;
+}
+
+.pregunta a:visited{
+    padding: .3;
+    text-decoration: none;
+    color: purple;
+    border: 1px solid #55555565;
+}
+
+
+
+.pie{
+    width: 900px;
+    border: 1px solid red;
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+}

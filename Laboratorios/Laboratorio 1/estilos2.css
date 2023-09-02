@@ -1,0 +1,149 @@
+.bgrojo{
+    background-color: rgb(250, 59, 98);
+}
+
+.bgverde{
+    background-color: rgb(0, 163, 114);
+}
+.bgplomo{
+    background-color: #cfcccc;
+}
+
+
+.contenedor{
+    width: 1028px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.header{
+    display: flex;
+    width: 1028px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    border: 1px solid black; 
+}
+#titulo{
+    width: auto;
+    text-align: center;
+    padding: 5px;
+    font-size: 24px;
+    padding-top: 20px;
+}
+#subtitulo{
+    width: 1028;
+    text-align: center;
+    padding: 5px;
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+
+.centrado{
+    text-align: center;
+}
+.menu{
+    width: 1028px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    border: 1px solid black;
+}
+
+#opcion{
+    width: fit-content;
+    padding: 10px;
+}
+#espacio{
+    color: rgba(0, 0, 0, 0);
+    width: 450px;
+}
+
+.menu a {
+    color: blue;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    outline: none;  
+  }
+.menu li{
+    list-style-type: none;
+}
+  
+.menu a:hover {
+    background-color: #555;
+  }
+
+.menu a:visited{
+    text-decoration: none;
+    color: purple;
+    border: 1px solid #7C7C7C;
+}
+
+.contenido{
+    width: 1028px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    border: 1px solid black;
+}
+
+.barralateral{
+    width: 410px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border-right: 1px solid black;
+}
+#imagen{
+    width: 600px;
+    text-align: center;
+    max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #7C7C7C;
+  }
+
+  #imagen2{
+    width: 400px;
+    text-align: center;
+    max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #7C7C7C;
+  }
+  
+  #texto{
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 1.5;
+  }
+  #textoN{
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 1.5;
+  }
+
+
+.blog{
+    width: 1028px-410px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.footer{
+    width: 1028px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    border: 1px solid black;
+}
