@@ -1,21 +1,31 @@
 <?php
 class pila{
 
-    private $datos;
-    public function insertar($item){
-        $this->datos = array();
+    private $elementos;
+    private $tope;
+
+    function __construct()
+    {
+        $this->elementos=array();
+    }
+    public function insertar($valor){
+        $this->tope++; 
+        $this->elementos[$this->tope] = $valor;
     }
     public function eliminar(){
         if ($this->vacio()){
             return null;
         }
-        return array_pop($this->datos);
+        $valor = $this->tope;
+        $this->tope--;
+        return ($valor);
+
     }
 
     public function show(){
-        return $this->datos;
+        return $this->elementos;
     }
     public function vacio(){
-        return empty($this->datos);
+        return empty($this->elementos);
     }
 }
