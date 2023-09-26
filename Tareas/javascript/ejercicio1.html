@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<body>
+    <script>
+        a = parseInt(prompt("Introduce el primer numero"));
+        b = parseInt(prompt("Introduce el segundo numero"));
+        c = parseInt(prompt("Introduce el tercer numero"));
+
+        var mayor, menor;
+
+        // Inicializamos mayor y menor con el primer número ingresado
+        mayor = menor = a;
+
+        if (b > mayor) {
+            mayor = b;
+        } else if (b < menor) {
+            menor = b;
+        }
+
+        if (c > mayor) {
+            mayor = c;
+        } else if (c < menor) {
+            menor = c;
+        }
+
+        document.write("El mayor es: " + mayor + "<br>");
+        document.write("El menor es: " + menor);
+    </script>
+</body>
+</html>
