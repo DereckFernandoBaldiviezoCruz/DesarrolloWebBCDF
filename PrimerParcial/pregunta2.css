@@ -1,0 +1,17 @@
+.naranja{
+    border: solid 3px #F79646;
+}
+.bgnaranja{
+    background-color: #F79646;
+}
+.select{
+    color: #F79646;
+}
+.contenedor{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    border: solid 1px #F79646;
+    padding: 20px;
+    margin: 20px;
+}
