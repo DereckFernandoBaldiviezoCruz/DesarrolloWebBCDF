@@ -26,9 +26,9 @@ switch($mes){
     case "Noviembre" : $mes = "11";
     break;
     case "Diciembre" : $mes = "12";
+    break;
 }
-$fecha = $año."-".$mes."-01"; // Cambia esta fecha a la que desees
-// Utiliza la función date con "w" para obtener el día de la semana en formato numérico
+$fecha = $año."-".$mes."-01";
 $fecha2 = $año."-".$mes."-31";
 $numeroDiaSemana = date("w", strtotime($fecha));
 echo "El día de la semana de $fecha es $numeroDiaSemana";
