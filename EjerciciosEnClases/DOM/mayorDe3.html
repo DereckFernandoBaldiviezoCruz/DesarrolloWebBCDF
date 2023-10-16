@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="a">A</label>
+    <input type="text" id="a">
+    <label for="b">B</label>
+    <input type="text" id="b">
+    <label for="c">C</label>
+    <input type="text" id="c">
+    <button onclick="mayor()">Calcular Mayor</button>
+    <script>
+        var numeros = document.getElementsByTagName("input");
+        function mayor(){
+            numeros[0].style.backgroundColor="white";
+            numeros[1].style.backgroundColor="white";
+            numeros[2].style.backgroundColor="white";
+            if(parseInt(numeros[0].value)>=parseInt(numeros[1].value)&&parseInt(numeros[0].value)>=parseInt(numeros[2].value)){
+                numeros[0].style.backgroundColor = "red";
+            }
+            if(parseInt(numeros[1].value)>parseInt(numeros[0].value)&&parseInt(numeros[1].value)>parseInt(numeros[2].value)){
+                numeros[1].style.backgroundColor = "red";
+            }
+            if(parseInt(numeros[2].value)>parseInt(numeros[0].value)&&parseInt(numeros[2].value)>parseInt(numeros[1].value)){
+                numeros[2].style.backgroundColor = "red";
+            }
+        }
+    </script>
+</body>
+</html>
