@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        <div>
+            <input type="text" name="nombres" id="nombres">
+            <label for="nombre">Nombres</label>
+        </div>
+        <div>
+            
+        </div>
+        <div>
+            <input type="text" name="apellidos" id="apellidos">
+            <label for="apellidos">Apellidos</label>
+        </div>
+        <div>
+            <label for="departamento">Departamento</label>
+            <select name="departamento" id="departamento" onchange="cargarProvincias()">
+                <option value="0">Selecciona</option>
+                <option value="1">Chuquisaca</option>
+                <option value="2">La Paz</option>
+                <option value="3">Cochabamba</option>
+                <option value="4">Oruro</option>
+                <option value="5">Potosi</option>
+                <option value="6">Tarija</option>
+                <option value="7">Santa Cruz</option>
+                <option value="8">Beni</option>
+                <option value="9">Pando</option>
+            </select>
+        </div>
+        <div>
+            <label for="provincia">Provincia</label>
+            <select name="provincia" id="provincia"></select>
+        </div>
+        <div>
+            <input type="submit" value="Registrar">
+        </div>
+        
+
+    </form>
+    <script>
+        function cargarProvincias()
+        {
+            alert('hola')
+        }
+    </script>
+</body>
+</html

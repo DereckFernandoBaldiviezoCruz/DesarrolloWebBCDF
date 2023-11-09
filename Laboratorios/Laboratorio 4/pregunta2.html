@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="imagen" src="images/imagen1.jpg" width="500px"><br>
+    <input type="number" id="cantidad">
+    <button id="agrandar">Agrandar</button>
+    <button id="reducir">Reducir</button>
+
+    <script>
+        document.getElementById('agrandar').addEventListener('click', function() {
+            var imagen = document.getElementById('imagen');
+            var cantidad = parseInt(document.getElementById('cantidad').value);
+            var tamañoActual = imagen.width;
+            imagen.style.width = (tamañoActual + cantidad) + "px";
+        });
+
+        document.getElementById('reducir').addEventListener('click', function() {
+            var imagen = document.getElementById('imagen');
+            var cantidad = parseInt(document.getElementById('cantidad').value);
+            var tamañoActual = imagen.width;
+            imagen.style.width = (tamañoActual - cantidad) + "px";
+        });
+    </script>
+</body>
+</html>
