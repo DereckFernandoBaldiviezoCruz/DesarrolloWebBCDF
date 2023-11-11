@@ -2,18 +2,145 @@
 <html>
 <head>
   <title>Página de Ejercicios</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" type="text/css" href="estilos.css">
-  <script src="ajax.js" type="text/javascript"></script>
+  <script>
+    function cargarContenido(abrir) {
+	var contenedor;
+	contenedor = document.getElementById('contenido');
+	var ajax = new XMLHttpRequest() //crea el objetov ajax 
+	ajax.open("get", abrir, true);
+	ajax.onreadystatechange = function () {
+		if (ajax.readyState == 4) {
+			console.log(ajax)
+			console.log(abrir)
+			console.log(contenedor)
+			contenedor.innerHTML = ajax.responseText
+		}
+	}
+	ajax.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+	ajax.send();
+}
+  var turno = 'X';
+  function realizarMovimiento(btn) {
+    if (btn.innerHTML === ' ' && turno === 'X') {
+      btn.innerHTML = 'X';
+      turno = 'O';
+    } else if (btn.innerHTML === ' ' && turno === 'O') {
+      btn.innerHTML = 'O';
+      turno = 'X';
+    }
+    document.getElementById('mensaje').textContent = 'Turno: ' + turno;
+  }
+
+  function mostrarDatos() {
+            // Realizar la solicitud AJAX para obtener y mostrar los datos de la tabla usuarios.
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("contenido").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "verificar.php", true);
+            xhr.send();
+        }
+
+        function cambiarNivel(usuario, nivel) {
+    // Aquí puedes realizar la actualización en la interfaz o enviar la información al servidor
+
+    // Ejemplo de actualización en la interfaz
+    var nivelElement = document.getElementById(usuario + '-nivel');
+    if (nivel == 0) {
+        nivelElement.innerHTML = 'Administrador';
+    } else if (nuevoNivel == 1) {
+        nivelElement.innerHTML = 'Usuario';
+    }
+
+    // También puedes enviar la información al servidor utilizando AJAX si es necesario
+    // Puedes adaptar el código anterior si necesitas realizar una solicitud AJAX.
+}
+
+        function autenticar() {
+    var contenedor;
+    contenedor = document.getElementById('contenido');
+    var formulario = document.getElementById("form-datos");
+    var parametros = new FormData(formulario);
+
+    var ajax = new XMLHttpRequest() //crea el objetov ajax 
+    ajax.open("post", 'autenticar.php' , true);
+    ajax.onreadystatechange = function ( ) {
+        if (ajax.readyState == 4) {
+            contenedor.innerHTML = ajax.responseText;
+        }
+    }
+
+    ajax.send(parametros );
+}
+
+        // Verificar la sesión al cargar la página.
+        
+
+    function generarTabla() {
+            var numeroInicio = parseInt(document.getElementById("numeroInicio").value);
+            var numeroFin = parseInt(document.getElementById("numeroFin").value);
+            var operacion = document.querySelector('input[name="operacion"]:checked').value;
+
+            if (isNaN(numeroInicio) || isNaN(numeroFin)) {
+                alert("Por favor, ingrese dos números válidos.");
+                return;
+            }
+
+            var resultadoHTML = "<table border='1'><tr><th>Operación</th><th>Resultado</th></tr>";
+
+            for (var i = 1; i <= numeroFin; i++) {
+                var resultado;
+
+                switch (operacion) {
+                    case "suma":
+                        resultado = i + numeroInicio;
+                        break;
+                    case "resta":
+                        resultado = i - numeroInicio;
+                        break;
+                    case "multiplicacion":
+                        resultado = i * numeroInicio;
+                        break;
+                    case "division":
+                        // Verificar que el divisor no sea cero
+                        if (numeroInicio !== 0) {
+                            resultado = i / numeroInicio;
+                        } else {
+                            resultado = "Indefinido";
+                        }
+                        break;
+                    default:
+                        alert("Operación no válida");
+                        return;
+                }
+
+                resultadoHTML += "<tr><td>" + i + " " + operacion + " " + numeroInicio + "</td><td>" + resultado + "</td></tr>";
+            }
+
+            resultadoHTML += "</table>";
+            document.getElementById("Resultado").innerHTML = resultadoHTML;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("calcularButton").addEventListener("click", generarTabla);
+        });
+  </script>
 </head>
 <body>
   <div class="container">
     <div class="preguntas" id="fondoplomo">
-      <button id="boton1" onclick="cargarContenido('tresenraya.html')">Pregunta 1</button>
+      <button id="boton1" onclick='cargarContenido("tresenraya.html")'>Pregunta 1</button>
+      <button id="boton2" onclick='cargarContenido("tabla.html")'>Pregunta 2</button>
+      <button id="boton3" onclick='cargarContenido("form_login.html")'>Pregunta 3</button>
     </div>
-    <div class="contenido">
+    <div class="contenido" id="contenido">
       <h1>Contenido de Ejercicios</h1>
     </div>
+
   </div>
-  <script src="ajax.js"></script>
 </body>
 </html>

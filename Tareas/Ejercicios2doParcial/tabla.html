@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla</title>
+
+    <!-- Script para la lógica de la tabla -->
+    <script>
+      function generarTabla() {
+            var numeroInicio = parseInt(document.getElementById("numeroInicio").value);
+            var numeroFin = parseInt(document.getElementById("numeroFin").value);
+            var operacion = document.querySelector('input[name="operacion"]:checked').value;
+
+            if (isNaN(numeroInicio) || isNaN(numeroFin)) {
+                alert("Por favor, ingrese dos números válidos.");
+                return;
+            }
+
+            var resultadoHTML = "<table border='1'><tr><th>Operación</th><th>Resultado</th></tr>";
+
+            for (var i = 1; i <= numeroFin; i++) {
+                var resultado;
+
+                switch (operacion) {
+                    case "suma":
+                        resultado = i + numeroInicio;
+                        break;
+                    case "resta":
+                        resultado = i - numeroInicio;
+                        break;
+                    case "multiplicacion":
+                        resultado = i * numeroInicio;
+                        break;
+                    case "division":
+                        if (numeroInicio !== 0) {
+                            resultado = i / numeroInicio;
+                        } else {
+                            resultado = "Indefinido";
+                        }
+                        break;
+                    default:
+                        alert("Operación no válida");
+                        return;
+                }
+
+                resultadoHTML += "<tr><td>" + i + " " + operacion + " " + numeroInicio + "</td><td>" + resultado + "</td></tr>";
+            }
+
+            resultadoHTML += "</table>";
+            document.getElementById("Resultado").innerHTML = resultadoHTML;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("calcularButton").addEventListener("click", generarTabla);
+        });
+
+    </script>
+</head>
+<body>
+
+   <!-- Contenido de la página -->
+   <div id="contenido">
+    <label for="numero">Número (menor a 10): </label>
+    <input type="text" id="numeroInicio" placeholder="Ingrese un número menor a 10">
+
+    <br>
+
+    <label for="operacion">Operación: </label>
+    <input type="radio" name="operacion" value="suma" checked> Suma
+    <input type="radio" name="operacion" value="resta"> Resta
+    <input type="radio" name="operacion" value="multiplicacion"> Multiplicacion
+    <input type="radio" name="operacion" value="division"> Division
+
+    <br>
+
+    <label for="otroNumero">Otro Número (mayor a 1): </label>
+    <input type="text" id="numeroFin" placeholder="Ingrese otro número mayor a 1">
+
+    <br>
+
+    <button onclick="generarTabla()">Tabla</button>
+</div>
+
+<!-- Resultado de la operación -->
+<div id="Resultado"></div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="fetch.js"></script>
+    <script>
+        function cargarContenido(abrir) {
+        var contenedor;
+        contenedor = document.getElementById('principal');
+        var ajax = new XMLHttpRequest() //crea el objetov ajax 
+        ajax.open("get", abrir, true);
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4) {
+                contenedor.innerHTML = ajax.responseText
+            }
+        }
+        ajax.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+        ajax.send();
+    }
+    function cargarBotones(abrir) {
+        var contenedor;
+        contenedor = document.getElementById('menu');
+        var ajax = new XMLHttpRequest() //crea el objetov ajax 
+        ajax.open("get", abrir, true);
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4) {
+                contenedor.innerHTML = ajax.responseText
+            }
+        }
+        ajax.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+        ajax.send();
+    }
+    function colocarDatos(){
+        document.getElementById('mensaje').innerHTML=`<button class="menu" onclick='cargarBotones("botones.html"),colocarDatos()'>Menu</button>
+        Nombre:Dereck Fernando Baldiviezo Cruz </br> CU: 35-4829`;
+            
+        
+    }
+    
+    function cargarContenedor(abrir) {
+        var contenedor;
+        contenedor = document.getElementById('container');
+        var ajax = new XMLHttpRequest() //crea el objetov ajax 
+
+        ajax.open("get", abrir, true);
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4) {
+                contenedor.innerHTML = ajax.responseText
+            }
+        }
+        ajax.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+        ajax.send();
+    }
+    function autenticar() {
+    var contenedor;
+    contenedor = document.getElementById('container');
+    var formulario = document.getElementById("form-datos");
+    var parametros = new FormData(formulario);
+
+    var ajax = new XMLHttpRequest() //crea el objetov ajax 
+    ajax.open("post", 'autenticar.php' , true);
+    ajax.onreadystatechange = function ( ) {
+        if (ajax.readyState == 4) {
+            contenedor.innerHTML = ajax.responseText;
+        }
+    }
+
+    ajax.send(parametros );
+}
+
+    </script>
+  <title>Página de Ejercicios</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+  <div class="container" id="container">
+    <div class="contenido" id="principal">
+        <h1>Contenido de Ejercicios</h1>
+      </div>
+    <div class="preguntas" id="menu" >
+        <script>
+            cargarBotones('botones.html');
+        </script>
+    </div>
+    <div class="mensaje" id="mensaje">
+        <button class="menu" onclick='cargarBotones("botones.html"),colocarDatos()'>Menu</button>
+        <script>colocarDatos()</script>
+    </div>
+  </div>
+  
+
+</body>
+</html>
